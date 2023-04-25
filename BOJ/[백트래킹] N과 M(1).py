@@ -15,12 +15,3 @@ def dfs():
             # [1] -> [1,2] -> pop [1] -> [1,3] -> pop[1]
             
 dfs()
-# print(result)
-from gpiozero import MotionSensor
-
-pir = MotionSensor(4)
-
-while True:
-	pir.wait_for_motion()
-	print("You moved")
-	pir.wait_for_no_motion()
