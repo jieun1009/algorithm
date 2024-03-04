@@ -1,0 +1,33 @@
+from collections import deque
+def solution(queue1, queue2):
+    queue1 = deque(queue1)
+    queue2 = deque(queue2)
+    
+    sum1 = sum(queue1)
+    sum2 = sum(queue2)
+    mid = (sum1 + sum2)//2
+        
+    maxcnt = len(queue1)*3
+    count=0
+    
+    while True:
+        if sum1==sum2:
+            return count
+    
+        if queue1 and sum1 > mid:
+            num = queue1.popleft()
+            queue2.append(num)
+            sum1-=num
+            sum2+=num
+            
+        elif queue2 and sum2 > mid:
+            num = queue2.popleft()
+            queue1.append(num)
+            sum2 -= num
+            sum1 += num
+        
+        if count > maxcnt:
+            return -1
+        count+=1
+        
+    return -1
