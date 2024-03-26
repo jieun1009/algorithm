@@ -27,6 +27,7 @@ for _ in range(t):
                 if long < x[i+k-1] - x[i]+1: # k개 chunk
                     long = x[i+k-1] - x[i]+1
 
+
     if short ==10e9 or long==0:
         print(-1)
         continue
