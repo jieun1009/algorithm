@@ -41,6 +41,7 @@ while True:
         for j in range(n):
             graph[i][j] = temp[j] 
 
-
+    
     dijkstra(0,0)
+    print(lose)
     print("Problem %d: %d"%(cnt,lose[n-1][n-1]))
